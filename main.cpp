@@ -400,8 +400,8 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"dns0.people.altcoinnodes.space", "dns1.people.altcoinnodes.space","dns2.people.altcoinnodes.space", ""};
-static const string testnet_seeds[] = {"testdns0.people.altcoinnodes.space", "testdns1.people.altcoinnodes.space","testdns2.people.altcoinnodes.space", ""};
+static const string mainnet_seeds[] = {"seed.peoplecoin.pw", ""};
+static const string testnet_seeds[] = {"testdns0.peoplecoin.pw", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
@@ -458,10 +458,10 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0x4D;
-      pchMessageStart[1] = 0x45;
-      pchMessageStart[2] = 0x4E;
-      pchMessageStart[3] = 0xb4;
+      pchMessageStart[0] = 0x07;
+      pchMessageStart[1] = 0x11;
+      pchMessageStart[2] = 0x05;
+      pchMessageStart[3] = 0x0b;
       seeds = testnet_seeds;
       fTestNet = true;
   }
